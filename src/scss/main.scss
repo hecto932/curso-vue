@@ -1,1 +1,78 @@
 @import "~bulma/bulma.sass";
+
+$container-w: 320px;
+$container-h: 409px;
+$color-black: #212121;
+$color-yellow: #ff9300;
+$color-lightblue: #00bfd6;
+$color-whiteblue: #A3ECF3;
+
+.container{
+    width: $container-w;
+    height: $container-h;
+    font-family: 'Roboto', sans-serif;
+    &#{-img}{
+        &--#{responsive}{
+            max-width: 100%;
+        }
+    }
+    &#{-elemnent}, &#{-img}{
+        width: 100%;        
+    }
+    &#{-label}, &#{-input}{
+        width: 100%;
+        display: block;        
+    }
+    &#{-label}{
+        font-size: 9px;
+        color: $color-yellow;           
+    }
+    &#{-input}{
+        border: 0;
+        border-bottom: 1px solid $color-yellow;
+        margin-bottom: .75em;  
+        padding: 3px0 .5em;   
+        &:focus {
+            outline: 0;
+        }
+          
+    }
+    &#{-submit}{
+        padding: 1em;
+        display: flex;
+        justify-content: flex-end;
+               
+    }
+    &#{-btn}{
+        border-radius: .2em;
+        background-color: $color-lightblue;
+        color: $color-whiteblue;
+        padding: 1em;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        border: none;
+        box-shadow: 2px3px10px#ddd;
+        &:active, &:focus {
+            outline:0;
+        }
+
+                 
+    }
+
+}
+
+.title{
+    color:$color-lightblue;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+html{
+    font-size: 100%;
+}
