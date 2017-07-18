@@ -1,9 +1,11 @@
 <template lang="pug">
   #app
     input(v-model="name")
-    p {{ name }}
+    input(v-model="lastname")
+    input(type="date" v-model="birthdate" value="birthdate")
 
-    a(:href="url") Link
+    p {{ fullName }}
+    p {{ getAge }}
 </template>
 
 <script>
@@ -11,8 +13,20 @@ export default {
   name: 'app',
   data () {
     return {
-      name: 'app',
-      url: 'https://platzi.com'
+      name: 'Hector',
+      lastname: 'Flores',
+      birthdate: new Date().toISOString().slice(0, 10)
+    }
+  },
+  computed: {
+    fullName () {
+      return `${this.name} ${this.lastname}`
+    },
+    getAge () {
+      let birthdate = new Date(this.birthdate)
+      let ageDifMs = Date.now() - birthdate.getTime()
+      let ageDate = new Date(ageDifMs)
+      return Math.abs(ageDate.getUTCFullYear() - 1970)
     }
   }
 }
