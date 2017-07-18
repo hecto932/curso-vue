@@ -1,12 +1,9 @@
 <template lang="pug">
   #app
-    p(v-show="showValue") {{ value }}
-    p(v-if="showValue") {{ value }}
-    p(v-else-if="false") {{ 'Algo mas' }}
-    p(v-else) {{ 'lo ultimo' }}
+    input(v-model="name")
+    p {{ name }}
 
-    ul
-      li(v-for="i in items") {{ i }}
+    a(:href="url") Link
 </template>
 
 <script>
@@ -14,10 +11,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Hola Vue!',
-      showValue: false,
-      value: 'Algo',
-      items: [1, 2, 3, 4, 5]
+      name: 'app',
+      url: 'https://platzi.com'
     }
   }
 }
