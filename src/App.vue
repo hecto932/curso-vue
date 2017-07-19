@@ -28,6 +28,11 @@ export default {
       let ageDate = new Date(ageDifMs)
       return Math.abs(ageDate.getUTCFullYear() - 1970)
     }
+  },
+  watch: {
+    name (newValue, oldValue) {
+      console.log()
+    }
   }
 }
 </script>
