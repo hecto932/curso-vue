@@ -1,4 +1,4 @@
-cons eventBus = {}
+const eventBus = {}
 
 eventBus.install = function (Vue) {
   Vue.prototype.$bus = new Vue()
